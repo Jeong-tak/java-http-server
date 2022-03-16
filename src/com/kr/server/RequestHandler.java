@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 
 public class RequestHandler extends Thread {
 
-	//public static final Logger log = LoggerFactory.getLogger(RequestHandler.class);
+	public static final Logger log = LoggerFactory.getLogger(RequestHandler.class);
 	
 	private Socket socket;
 	
@@ -28,12 +28,12 @@ public class RequestHandler extends Thread {
 			
 			String line;
 			while( (line = br.readLine()) != null ) {
-				System.out.println("[WebServer] socket getLineOfData :: " + line);
+				log.info("socket getLineOfData :: " + line);
 			}
 			
 		} catch(IOException e) {
 			
-			System.out.println("[WebServer] exception socket");
+			log.info("exception socket");
 		}
 	}
 }

@@ -9,12 +9,12 @@ import org.slf4j.LoggerFactory;
 
 public class WebServer {
 
-	//private static final Logger log = LoggerFactory.getLogger(WebServer.class);
+	private static final Logger log = LoggerFactory.getLogger(WebServer.class);
 	// 포트번호
 	private static final int PORT = 12345;
 	
 	public static void main(String[] args) {
-		//log.debug("[WebServer] main start debug");
+		log.info("main start debug");
 		
 		try {
 			// 서버소켓 오픈(클라이언트에서 접속 가능)
@@ -29,7 +29,7 @@ public class WebServer {
 			}
 		
 		} catch (IOException e) {
-			System.out.println("[WebServer] exception ServerSocket");
+			log.info("exception ServerSocket");
 			e.printStackTrace();
 		} finally {
 			

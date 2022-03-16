@@ -9,6 +9,5 @@ public class LoggingTest {
 	
 	public static void main(String[] args) {
 		log.info("Logging Test");
-		System.out.println("werwerwe");
 	}
 }
