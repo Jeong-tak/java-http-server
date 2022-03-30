@@ -29,6 +29,7 @@ public class RequestUtil {
 		String line;
 		while((line = br.readLine()) != null ) {
 			
+			log.debug(line);
 			if ( !"".equals(line) ) {
 				
 				String[] splitedStr = line.split(":");

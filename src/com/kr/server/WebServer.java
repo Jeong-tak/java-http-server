@@ -29,7 +29,7 @@ public class WebServer {
 			}
 		
 		} catch (IOException e) {
-			log.info("exception ServerSocket");
+			log.error("exception ServerSocket");
 			e.printStackTrace();
 		} finally {
 			

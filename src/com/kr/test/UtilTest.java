@@ -2,6 +2,7 @@ package com.kr.test;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -107,5 +108,19 @@ public class UtilTest {
 		log.info("[readHeader] return {}", map.toString());
 		
 		return map;
+	}
+	
+	public static void response200Header(DataOutputStream dos, int lenOfBodyContent) throws IOException {
+		
+		dos.writeBytes("HTTP/1.1 200 OK \r\n");
+		dos.writeBytes("Content-Type: text/html;charset=utf-8\r\n");
+		dos.writeBytes("Content-Length: " + lenOfBodyContent + "\r\n");
+		dos.writeBytes("\r\n");
+	}
+	
+	public static void responseBody(DataOutputStream dos, byte[] body) throws IOException {
+		
+		dos.write(body, 0, body.length);
+		dos.flush();
 	}
 }

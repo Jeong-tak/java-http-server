@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<title>Invalid Access</title>
+	</head>
+	<body>
+		<div>유효하지않은 접근입니다.</div>
+		<button id="btnGoMain">To Main</button>	
+	</body>
+	<script type="text/javascript">
+		window.onload = function() {
+			var btnGoMain = document.getElementById("btnGoMain");
+			btnGoMain.addEventListener('click', function() {
+				location.href = '/index.html?name=jeongtak';
+			});
+		}
+	</script>
+</html>
