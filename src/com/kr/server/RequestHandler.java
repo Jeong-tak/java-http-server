@@ -67,6 +67,7 @@ public class RequestHandler extends Thread {
 					
 					body = Files.readAllBytes(pageFile.toPath());
 				} else {
+					log.debug("유효하지 않은 URL입니다 :: {}", httpUrl);
 					body = Files.readAllBytes( new File("./webContent/errorPage.html").toPath());
 				}
 				
